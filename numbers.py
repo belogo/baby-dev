@@ -62,3 +62,14 @@ most_common_age = max(ages_histogram, key=lambda age: ages_histogram[age])
 least_common_age = min(ages_histogram, key=lambda age: ages_histogram[age])
 
 
+# find unique value in ages
+unique_ages = list(set(ages))
+
+
+# make a list with different / unique ages 
+def unique_ages_list(ages):
+	unique = []
+	for age in ages:
+		if age not in unique:
+			unique.append(age)
+	return unique
