@@ -73,3 +73,31 @@ def unique_ages_list(ages):
 		if age not in unique:
 			unique.append(age)
 	return unique
+
+
+
+class Arr:
+	def __init__(self, size=0, default=None):
+		self.arr = [default] * size
+		self.size = size
+
+	def add(self, value):
+		self.arr.append(value)
+		self.size += 1
+		return self
+
+	def remove(self, rem_value):
+		self.arr = [ v for v in self.arr if v != rem_value]
+		self.size = len(arr)
+		return self
+
+	def __repr__(self):
+		return repr(self.arr)
+
+
+	def __str__(self):
+		return str(self.arr)
+
+
+	def size(self):
+		return self.size
