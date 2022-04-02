@@ -91,6 +91,9 @@ class Arr:
 		self.size = len(arr)
 		return self
 
+	def encounter(self, value):
+		return sum( 1 for v in self.arr if v == value)
+
 	def __repr__(self):
 		return repr(self.arr)
 
