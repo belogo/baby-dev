@@ -91,6 +91,13 @@ class Arr:
 		self.size = len(arr)
 		return self
 
+	def set(self, idx, value):
+		if 0 < idx < self.size:
+			self.arr[idx] = value
+			return self
+		else:
+			raise IndexError
+
 	def map(self, func):
 		for idx, elem in enumerate(self.arr):
 			self.arr[idx] = func(elem)
