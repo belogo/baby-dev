@@ -8,7 +8,7 @@ my_age = 35
 
 # make a list (array) with numbers
 # hard codded
-ages = [10, 9, 12, 32, 50, 22]
+ages = [10, 9, 50, 12, 32, 33, 50, 50, 22]
 
 
 # find oldest
@@ -54,5 +54,9 @@ for age in ages:
 	ages_histogram[age] = ages_histogram.get(age, 0) + 1
 
 most_common_age = max(ages_histogram, key=lambda age: ages_histogram[age])
+
+
+# find the least common age 
+least_common_age = min(ages_histogram, key=lambda age: ages_histogram[age])
 
 
