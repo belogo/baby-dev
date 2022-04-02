@@ -78,42 +78,62 @@ def unique_ages_list(ages):
 
 class Arr:
     def __init__(self, size=0, default=None):
-        self.arr = [default] * size
-        self.size = size
+        self.__arr = [default] * size
+        self.__size = size
+
+
+    def __del__(self):
+        del self.__arr
+        del self.__size
+
 
     def add(self, value):
-        self.arr.append(value)
-        self.size += 1
+        self.__arr.append(value)
+        self.__size += 1
         return self
+
 
     def remove(self, rem_value):
-        self.arr = [ v for v in self.arr if v != rem_value]
-        self.size = len(arr)
+        self.__arr = [ v for v in self.__arr if v != rem_value]
+        self.__size = len(__arr)
         return self
 
+
     def set(self, idx, value):
-        if -1 < idx < self.size:
-            self.arr[idx] = value
+        if -1 < idx < self.__size:
+            self.__arr[idx] = value
             return self
         else:
             raise IndexError
 
+
     def map(self, func):
-        for idx, elem in enumerate(self.arr):
-            self.arr[idx] = func(elem)
+        for idx, elem in enumerate(self.__arr):
+            self.__arr[idx] = func(elem)
+        return self
+
+
+    def filter(self, func):
+        """Return a new list of filtered values from self"""
+        return list(filter(func, self.__arr))
+
+
+    def filter_(self, func):
+        """Inplace filter of elements"""
+        self.__arr = list(filter(func, self.__arr))
         return self
 
 
     def encounter(self, value):
-        return sum( 1 for v in self.arr if v == value)
+        return sum( 1 for v in self.__arr if v == value)
 
     def __repr__(self):
-        return repr(self.arr)
+        return repr(self.__arr)
 
 
     def __str__(self):
-        return str(self.arr)
+        return str(self.__arr)
 
 
     def size(self):
-        return self.size
+        return self.__size
