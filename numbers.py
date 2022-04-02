@@ -91,6 +91,11 @@ class Arr:
 		self.size = len(arr)
 		return self
 
+	def map(self, func):
+		# Todo
+		return self
+
+
 	def encounter(self, value):
 		return sum( 1 for v in self.arr if v == value)
 
