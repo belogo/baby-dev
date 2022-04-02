@@ -92,7 +92,8 @@ class Arr:
 		return self
 
 	def map(self, func):
-		# Todo
+		for idx, elem in enumerate(self.arr):
+			self.arr[idx] = func(elem)
 		return self
 
 
