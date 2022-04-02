@@ -53,6 +53,8 @@ ages_histogram = {}
 for age in ages:
 	ages_histogram[age] = ages_histogram.get(age, 0) + 1
 
+
+# find the most common age
 most_common_age = max(ages_histogram, key=lambda age: ages_histogram[age])
 
 
