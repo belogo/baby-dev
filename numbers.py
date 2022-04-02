@@ -92,7 +92,7 @@ class Arr:
         return self
 
     def set(self, idx, value):
-        if 0 < idx < self.size:
+        if -1 < idx < self.size:
             self.arr[idx] = value
             return self
         else:
