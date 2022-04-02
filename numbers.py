@@ -29,3 +29,15 @@ count_of_ages = len(age)
 
 # find average age in ages
 avg_age = sum(ages) / len(ages)
+
+
+# sort ages in ascending order
+asc_ages = sorted(ages)
+
+
+# find the second age ( if len(ages) >= 2 )
+second_age = ages[1]
+
+
+# find the age next to the last ( if len(ages) >= 2 )
+penultimate = ages[-1]
