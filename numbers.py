@@ -24,7 +24,7 @@ sum_of_ages = sum(ages)
 
 
 # find count of ages
-count_of_ages = len(age)
+count_of_ages = len(ages)
 
 
 # find average age in ages
@@ -94,6 +94,7 @@ class Arr:
 
 
     def remove(self, rem_value):
+        """Remove all occurance of rem_value from self in place"""
         self.__arr = [ v for v in self.__arr if v != rem_value]
         self.__size = len(__arr)
         return self
@@ -127,6 +128,17 @@ class Arr:
     def encounter(self, value):
         return sum( 1 for v in self.__arr if v == value)
 
+
+    def clean(self):
+        self.__arr.clear()
+        self.__size = 0
+        return self
+
+
+    def is_empty(self):
+        return self.__arr == []
+
+
     def __repr__(self):
         return repr(self.__arr)
 
@@ -135,5 +147,26 @@ class Arr:
         return str(self.__arr)
 
 
+    def __contains__(self, value):
+        """Return index of first occurance of value in self"""
+        for idx, elem in enumerate(self.__arr):
+            if elem == value:
+                return True
+        return None
+
+
+    def __bool__(self):
+        return not self.is_empty()
+
+
+
     def size(self):
         return self.__size
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()
