@@ -76,6 +76,16 @@ def unique_ages_list(ages):
 
 
 
+# Gambling functions 
+def make_a_bet(_from, to, size):
+    """Make a lottery bet like 5/35, 6/42, 6/49. Result is stored in sorted list"""
+    mybet = set()
+    while len(mybet) != size:
+        mybet.add( randint(_from, to) )
+    return sorted(mybet)
+
+
+
 class Arr:
     def __init__(self, size=0, default=None):
         self.__arr = [default] * size
@@ -165,8 +175,3 @@ class Arr:
 
 
 
-
-
-
-if __name__ == '__main__':
-    main()
